@@ -79,5 +79,31 @@
       "dueDate": "08/31/90",
       "studentId": 2
     }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "event": "Science Museum",
+      "location": "Adventure Science Museum" ,
+      "date": "03/31/98"
+    },
+    {
+      "id": 2,
+      "event": "Field Day",
+      "location": "Dan Mills Elementary" ,
+      "date": "05/31/90"
+    },
+    {
+      "id": 3,
+      "event": "Talent Show",
+      "location": "Dan Mills Elementary" ,
+      "date": "02/31/56"
+    },
+    {
+      "id": 4,
+      "event": "Parent/Teacher Confereces",
+      "location": "Dan Mills Elementary" ,
+      "date": "09/08/54"
+    }
   ]
 }

@@ -5,7 +5,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="tile is-ancestor box">
-        <div className="tile is-4 is-vertical is-parent">
+        <div className="tile is-4 is-vertical is-parent is-info">
           <div className="tile is-child box">
             <p className="title">Hi! My Name Is Mrs. Riggs</p>
             <p>
