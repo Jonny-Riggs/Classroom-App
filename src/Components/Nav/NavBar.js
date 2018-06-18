@@ -22,7 +22,7 @@ export default class NavBar extends Component {
     <li className="is-active"><Link to="/Home">Home</Link></li>
     <li><Link to="/Student">Students</Link></li>
     <li><Link to="/Calendar">Calendar</Link></li>
-    <li><a>Assignments</a></li>
+    <li><Link to="/Assignment">Assignments</Link></li>
   </ul>
 </div>
 </section>
