@@ -48,7 +48,7 @@ export default class Calendar extends Component {
                   placeholder="Rounded input"
                 />
                 <input
-                  value={this.state.location}
+                  value={this.state.event}
                   onChange={this.handleFieldChange}
                   id="location"
                   className="input"
@@ -58,7 +58,7 @@ export default class Calendar extends Component {
                 <div className="field">
                   <div className="control">
                     <textarea
-                      value={this.state.event}
+                      value={this.state.location}
                       onChange={this.handleFieldChange}
                       id="event"
                       className="textarea is-danger"
@@ -71,27 +71,31 @@ export default class Calendar extends Component {
               </div>
             </div>
           </article>
-        </div>
-        <div className="tile is-child">
-          <article className="tile is-child notification is-danger">
-            <div className="content">
-              <p className="title">Events</p>
-              <p className="subtitle" />
-              <div className="content">
-                {this.state.calendarList.map(e => {
-                  return (
-                    <ul key={e.id}>
-                      <li>{e.event}</li>
-                      <li>{e.location}</li>
-                      <li>{e.date}</li>
-                    </ul>
-                  );
-                })}
-              </div>
-            </div>
-          </article>
+          <div>
+            {this.state.calendarList.map(e => {
+              return (
+                <div className="tile is-child box" key={e.id}>
+                  <article className="message is-info">
+                    <div className="message-header">
+                      {e.event} {e.date}
+                      <a className="delete is-large" />
+                    </div>
+                    <div className="message-body">{e.location}</div>
+                  </article>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     );
   }
 }
+
+//     {this.state.calendarList.map(e => {
+//         return (
+// <ul key={e.id}>
+//   <li>{e.event}</li>
+//   <li>{e.location}</li>
+//   <li>{e.date}</li>
+// </ul>
