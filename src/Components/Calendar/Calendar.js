@@ -1,34 +1,34 @@
 import React, { Component } from 'react';
 import 'bulma/css/bulma.css';
-import Post from '../Post/Post'
+import Post from '../Post/Post';
 
 export default class Calendar extends Component {
-  constructor () {
-    super()
+  constructor() {
+    super();
     this.state = {
       calendarList: [],
-      date: "",
-      location: "",
-      event: ""
-    }
-}
-componentDidMount(){
-  this.fetchData()
-}
+      date: '',
+      location: '',
+      event: '',
+    };
+  }
+  componentDidMount() {
+    this.fetchData();
+  }
 
-fetchData(){
-  fetch("http://localhost:8088/events")
-  .then(r => r.json())
-  .then(event => {
-    this.setState({calendarList: event})
-  })
-}
+  fetchData() {
+    fetch('http://localhost:8088/events')
+      .then(r => r.json())
+      .then(event => {
+        this.setState({ calendarList: event });
+      });
+  }
 
-handleFieldChange = (evt) => {
-  const stateToChange = {}
-  stateToChange[evt.target.id] = evt.target.value
-  this.setState(stateToChange)
-}
+  handleFieldChange = evt => {
+    const stateToChange = {};
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+  };
 
   render() {
     return (
@@ -67,9 +67,7 @@ handleFieldChange = (evt) => {
                     />
                   </div>
                 </div>
-                <Post state={
-                  this.state
-                }/>
+                <Post state={this.state} />
               </div>
             </div>
           </article>
@@ -81,11 +79,13 @@ handleFieldChange = (evt) => {
               <p className="subtitle" />
               <div className="content">
                 {this.state.calendarList.map(e => {
-                  return <ul key={e.id}>
-                    <li>{e.event}</li>
-                    <li>{e.location}</li>
-                    <li>{e.date}</li>
-                  </ul>
+                  return (
+                    <ul key={e.id}>
+                      <li>{e.event}</li>
+                      <li>{e.location}</li>
+                      <li>{e.date}</li>
+                    </ul>
+                  );
                 })}
               </div>
             </div>
