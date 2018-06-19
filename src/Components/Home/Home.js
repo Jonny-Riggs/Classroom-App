@@ -5,8 +5,8 @@ export default class Home extends Component {
   render() {
     return (
       <div className="tile is-ancestor box">
-        <div className="tile is-4 is-vertical is-parent is-info">
-          <div className="tile is-child box">
+        <div className="tile is-4 is-vertical is-parent">
+          <article className="tile is-child box is-info">
             <p className="title">Hi! My Name Is Mrs. Riggs</p>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
@@ -15,7 +15,7 @@ export default class Home extends Component {
               ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta
               orci, quis semper odio felis ut quam.
             </p>
-          </div>
+          </article>
           <div className="tile is-child box">
             <p className="title">Education</p>
             <p>

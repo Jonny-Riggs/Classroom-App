@@ -30,12 +30,12 @@ fetchData(){
               <p className="subtitle">With even more content</p>
               <div className="content">
                 <input
-                  className="input is-rounded"
+                  className="input"
                   type="date"
                   placeholder="Rounded input"
                 />
                 <input
-                  className="input is-rounded"
+                  className="input"
                   type="text"
                   placeholder="LOCATION"
                 />
