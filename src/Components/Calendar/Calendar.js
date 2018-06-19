@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'bulma/css/bulma.css';
-import Post from '../Post/Post';
+import Post from './Post';
 
 export default class Calendar extends Component {
   constructor() {
