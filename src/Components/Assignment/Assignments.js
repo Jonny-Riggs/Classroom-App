@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'bulma/css/bulma.css';
 import PostAssign from './PostAssign';
+import Delete from './Delete';
 
 export default class Assignments extends Component {
   constructor() {
@@ -12,6 +13,19 @@ export default class Assignments extends Component {
       dueDate: '',
     };
   }
+
+  deleteAssignment = function(id) {
+    const array = this.state.assignmentList;
+    const index = array.findIndex(item => item.id === id);
+    array.splice(index, 1);
+    this.setState({ assignmentList: array });
+  }.bind(this);
+
+  postAssignment = function(response) {
+    const newArray = this.state.assignmentList;
+    newArray.push(response);
+    this.setState({ assignmentList: newArray });
+  }.bind(this);
 
   componentDidMount() {
     this.loadAssignments();
@@ -39,7 +53,11 @@ export default class Assignments extends Component {
             <article className="message" key={a.id}>
               <div className="message-header">
                 <p>{a.title}</p>
-                <button className="delete" aria-label="delete" />
+                <Delete
+                  state={this.state}
+                  id={a.id}
+                  deleteAssignment={this.deleteAssignment}
+                />
               </div>
               <div className="message-body">
                 <strong>{a.desc}</strong>
@@ -76,7 +94,7 @@ export default class Assignments extends Component {
                 placeholder="Due Date"
                 id="dueDate"
               />
-              <PostAssign state={this.state} />
+              <PostAssign state={this.state} post={this.postAssignment} />
             </div>
           </div>
         </footer>

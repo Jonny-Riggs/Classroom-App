@@ -43,7 +43,7 @@ export default class Calendar extends Component {
                   value={this.state.date}
                   onChange={this.handleFieldChange}
                   id="date"
-                  className="input"
+                  className="input box"
                   type="date"
                   placeholder="Rounded input"
                 />
@@ -51,7 +51,7 @@ export default class Calendar extends Component {
                   value={this.state.event}
                   onChange={this.handleFieldChange}
                   id="location"
-                  className="input"
+                  className="input box"
                   type="text"
                   placeholder="LOCATION"
                 />
@@ -61,7 +61,7 @@ export default class Calendar extends Component {
                       value={this.state.location}
                       onChange={this.handleFieldChange}
                       id="event"
-                      className="textarea is-danger"
+                      className="textarea is-danger box"
                       type="text"
                       placeholder="EVENT"
                     />
