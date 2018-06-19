@@ -44,7 +44,7 @@ export default class Student extends Component {
                       <p className="title">Middle tile</p>
                       <p className="subtitle">With an image</p>
                       <figure className="image is-4by3">
-                        <img src={s.image} />
+                        <img alt="" src={s.image} />
                       </figure>
                     </article>
                   </div>

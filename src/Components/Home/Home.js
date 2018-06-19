@@ -55,9 +55,9 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
-        <footer class="footer">
-          <div class="container">
-            <div class="content has-text-centered">
+        <footer className="footer">
+          <div className="container">
+            <div className="content has-text-centered">
               <p>
                 <strong>Mrs. Riggs Classroom</strong> by{' '}
                 <a href="https://github.com/Jonny-Riggs/Classroom-App">

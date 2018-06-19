@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import 'bulma/css/bulma.css'
-import Calendar from '../Calendar/Calendar'
 
 export default class NavBar extends Component {
     render() {
