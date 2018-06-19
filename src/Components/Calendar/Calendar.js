@@ -2,28 +2,23 @@ import React, { Component } from 'react';
 import 'bulma/css/bulma.css';
 
 export default class Calendar extends Component {
-  constructor(props) {
-    super(props);
-    this.uniqueKey = 1;
-  }
+  constructor () {
+    super()
+    this.state = {
+      calendarList: []
+    }
+}
+componentDidMount(){
+  this.fetchData()
+}
 
-  state = {
-    event: '',
-    location: '',
-    date: '',
-  };
-
-  loadEvents = () => {
-    let eventList = [];
-    fetch('http://localhost:8088/events/1')
-      .then(r => r.json())
-      .then(events => {
-        this.setState(events);
-      });
-  };
-  componentDidMount() {
-    this.loadEvents();
-  }
+fetchData(){
+  fetch("http://localhost:8088/events")
+  .then(r => r.json())
+  .then(event => {
+    this.setState({calendarList: event})
+  })
+}
 
   render() {
     return (
@@ -63,11 +58,13 @@ export default class Calendar extends Component {
               <p className="title">Events</p>
               <p className="subtitle" />
               <div className="content">
-                <div>
-                  <li>{this.state.event}</li>
-                  <li>{this.state.location}</li>
-                  <li>{this.state.date}</li>
-                </div>
+                {this.state.calendarList.map(e => {
+                  return <ul key={e.id}>
+                    <li>{e.event}</li>
+                    <li>{e.location}</li>
+                    <li>{e.date}</li>
+                  </ul>
+                })}
               </div>
             </div>
           </article>

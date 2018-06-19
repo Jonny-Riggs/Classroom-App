@@ -70,6 +70,7 @@ export default class Student extends Component {
         </div>
       </div>
     </article>
+    <a className="button is-danger is-focused">Next</a>
   </div>
 </div>
         )
