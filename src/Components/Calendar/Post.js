@@ -10,8 +10,8 @@ export default class Post extends Component {
       },
       body: JSON.stringify({
         event: this.props.state.event,
-        date: this.props.state.date,
-        location: this.props.state.location,
+        date: this.props.state.location,
+        location: this.props.state.date,
       }),
     }).then(r => r.json());
   render() {

@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import 'bulma/css/bulma.css';
+import PostAssign from './PostAssign';
 
 export default class Assignments extends Component {
   constructor() {
     super();
     this.state = {
       assignmentList: [],
+      title: '',
+      desc: '',
+      dueDate: '',
     };
   }
 
@@ -20,6 +24,12 @@ export default class Assignments extends Component {
         this.setState({ assignmentList: assign });
       });
   }
+
+  handleFieldChange = evt => {
+    const stateToChange = {};
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+  };
 
   render() {
     return (
@@ -39,6 +49,37 @@ export default class Assignments extends Component {
             </article>
           );
         })}
+        <footer className="footer">
+          <div className="container">
+            <div className="content has-text-centered control">
+              <input
+                value={this.state.title}
+                onChange={this.handleFieldChange}
+                className="input is-info box"
+                type="text"
+                placeholder="Title"
+                id="title"
+              />
+              <input
+                value={this.state.desc}
+                onChange={this.handleFieldChange}
+                className="input is-info box"
+                type="text"
+                placeholder="Description"
+                id="desc"
+              />
+              <input
+                value={this.state.dueDate}
+                onChange={this.handleFieldChange}
+                className="input is-info box"
+                type="date"
+                placeholder="Due Date"
+                id="dueDate"
+              />
+              <PostAssign state={this.state} />
+            </div>
+          </div>
+        </footer>
       </div>
     );
   }
