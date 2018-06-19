@@ -2,40 +2,41 @@ import React, { Component } from 'react';
 import 'bulma/css/bulma.css';
 
 export default class Assignments extends Component {
-
-    state = {
-        title: "",
-        desc: "",
-        dueDate: "",
-        studentId: 0
+  constructor() {
+    super()
+    this.state = {
+      assignmentList: []
     }
-
-    loadAssignment = () => {
-        fetch("http://localhost:8088/assignments/1")
-        .then(r => r.json())
-        .then(assign => {
-           this.setState(assign)
-        })
-    }
+  }
 
     componentDidMount() {
-        this.loadAssignment()
+      this.loadAssignments()
     }
 
-
+loadAssignments() {
+  fetch("http://localhost:8088/assignments")
+  .then(r => r.json())
+  .then(assign => {
+    this.setState({assignmentList: assign})
+  })
+}
 
   render() {
-    return (
-      <article className="message">
-        <div className="message-header">
-          <p>{this.state.title}</p>
-          <button className="delete" aria-label="delete" />
-        </div>
-        <div className="message-body">
-          <strong>{this.state.desc}</strong><br/>
-          <strong>{this.state.dueDate}</strong>
-        </div>
-      </article>
-    );
+    return(
+      <div>
+        {this.state.assignmentList.map(a => {
+          return <article className="message" key={a.id}>
+          <div className="message-header">
+            <p>{a.title}</p>
+            <button className="delete" aria-label="delete" />
+          </div>
+          <div className="message-body">
+          <strong>{a.desc}</strong><br/>
+          <strong>{a.dueDate}</strong>
+          </div>
+        </article>
+        })}
+      </div>
+    )
   }
 }
