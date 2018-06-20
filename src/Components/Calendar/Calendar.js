@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'bulma/css/bulma.css';
 import Post from './Post';
+import DeleteEvent from './DeleteEvent'
 
 export default class Calendar extends Component {
   constructor() {
@@ -12,6 +13,19 @@ export default class Calendar extends Component {
       event: '',
     };
   }
+  deleteEvent = function(id) {
+    const array = this.state.calendarList;
+    const index = array.findIndex(item => item.id === id);
+    array.splice(index, 1);
+    this.setState({ calendarList: array });
+  }.bind(this);
+
+  postEvent = function(response) {
+    const newArray = this.state.calendarList;
+    newArray.push(response);
+    this.setState({ calendarList: newArray });
+  }.bind(this);
+
   componentDidMount() {
     this.fetchData();
   }
@@ -37,7 +51,7 @@ export default class Calendar extends Component {
           <article className="tile is-child notification is-danger">
             <div className="content">
               <p className="title">Add Event</p>
-              <p className="subtitle">With even more content</p>
+              <p className="subtitle">Where do you want to go?!?</p>
               <div className="content">
                 <input
                   value={this.state.date}
@@ -48,17 +62,18 @@ export default class Calendar extends Component {
                   placeholder="Rounded input"
                 />
                 <input
-                  value={this.state.event}
+                  value={this.state.location}
                   onChange={this.handleFieldChange}
                   id="location"
                   className="input box"
                   type="text"
                   placeholder="LOCATION"
-                />
+                  />
                 <div className="field">
                   <div className="control">
                     <textarea
-                      value={this.state.location}
+
+                      value={this.state.event}
                       onChange={this.handleFieldChange}
                       id="event"
                       className="textarea is-danger box"
@@ -67,7 +82,7 @@ export default class Calendar extends Component {
                     />
                   </div>
                 </div>
-                <Post state={this.state} />
+                <Post state={this.state} post={this.postEvent}/>
               </div>
             </div>
           </article>
@@ -78,7 +93,11 @@ export default class Calendar extends Component {
                   <article className="message is-info">
                     <div className="message-header">
                       {e.event} {e.date}
-                      <a className="delete is-large" />
+                      <DeleteEvent
+                        state={this.state}
+                        id={e.id}
+                        deleteEvent={this.deleteEvent}
+                      />
                     </div>
                     <div className="message-body">{e.location}</div>
                   </article>

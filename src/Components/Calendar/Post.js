@@ -10,13 +10,13 @@ export default class Post extends Component {
       },
       body: JSON.stringify({
         event: this.props.state.event,
-        date: this.props.state.location,
-        location: this.props.state.date,
+        date: this.props.state.date,
+        location: this.props.state.location,
       }),
-    }).then(r => r.json());
+    }).then(r => r.json()).then(response => this.props.post(response));
   render() {
     return (
-      <a className="button is-success" onClick={this.postEvent}>
+      <a className="button is-info" onClick={this.postEvent}>
         Submit
       </a>
     );
