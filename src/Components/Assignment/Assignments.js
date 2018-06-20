@@ -39,11 +39,11 @@ export default class Assignments extends Component {
       });
   }
 
-  handleFieldChange = evt => {
+  handleFieldChange = function(evt) {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
-  };
+  }.bind(this);
 
   render() {
     return (

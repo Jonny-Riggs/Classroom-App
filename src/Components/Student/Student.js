@@ -30,19 +30,17 @@ export default class Student extends Component {
               <div className="tile is-vertical is-6">
                 <div className="tile">
                   <div className="tile is-parent is-vertical">
-                    <article className="tile is-child notification is-primary">
+                    <article className="tile is-child notification has-text-centered is-primary">
                       <p className="title">{s.firstName}</p>
-                      <p className="title">{s.lastName}</p>
                     </article>
-                    <article className="tile is-child notification is-warning">
-                      <p className="title">...tiles</p>
-                      <p className="subtitle">Bottom tile</p>
+                    <article className="tile is-child notification has-text-centered is-danger">
+                      <p className="title">{s.lastName}</p>
                     </article>
                   </div>
                   <div className="tile is-parent">
                     <article className="tile is-child notification is-info">
-                      <p className="title">Middle tile</p>
-                      <p className="subtitle">With an image</p>
+                      <p className="title">Smile!!</p>
+                      <p className="subtitle">Mrs. Riggs Kindergarten Class</p>
                       <figure className="image is-4by3">
                         <img alt="" src={s.image} />
                       </figure>
@@ -58,11 +56,19 @@ export default class Student extends Component {
                 </div>
               </div>
               <div className="tile is-parent">
-                <article className="tile is-child notification is-success">
+                <article className="tile is-child notification is-primary">
                   <div className="content">
-                    <p className="title">Tall tile</p>
-                    <p className="subtitle">With even more content</p>
+                    <p className="title">NOTES</p>
+                    <p className="subtitle">Parent/Teacher</p>
                     <div className="content" />
+                    <div className="control box">
+                      <textarea
+                        className="textarea is-focused"
+                        type="text"
+                        placeholder="Focused textarea"
+                      />
+                    </div>
+                    <input className="button is-info" type="submit" value="Submit" />
                   </div>
                 </article>
               </div>
