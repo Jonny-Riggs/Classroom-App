@@ -89,17 +89,17 @@ export default class Calendar extends Component {
           <div>
             {this.state.calendarList.map(e => {
               return (
-                <div className="tile is-child box" key={e.id}>
-                  <article className="message is-info">
+                <div className="tile is-child" key={e.id}>
+                  <article className="message is-info box">
                     <div className="message-header">
-                      {e.event} {e.date}
+                      {e.location} {e.date}
                       <DeleteEvent
                         state={this.state}
                         id={e.id}
                         deleteEvent={this.deleteEvent}
                       />
                     </div>
-                    <div className="message-body">{e.location}</div>
+                    <div className="message-body">{e.event}</div>
                   </article>
                 </div>
               );
