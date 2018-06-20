@@ -49,12 +49,6 @@
       "desc": "Addition and Multiplication",
       "dueDate": "07/31/90",
       "studentId": 1
-    },
-    {
-      "title": "Summer Reading",
-      "desc": "Books listed at the Library",
-      "dueDate": "2018-06-30",
-      "id": 4
     }
   ],
   "events": [
@@ -69,36 +63,6 @@
       "event": "Field Day",
       "location": "Dan Mills Elementary",
       "date": "05/31/90"
-    },
-    {
-      "id": 3,
-      "event": "Talent Show",
-      "location": "Dan Mills Elementary",
-      "date": "02/31/56"
-    },
-    {
-      "id": 4,
-      "event": "Parent/Teacher Confereces",
-      "location": "Dan Mills Elementary",
-      "date": "09/08/54"
-    },
-    {
-      "event": "PARTYYYYYYYYYYYYY",
-      "date": "2018-06-29",
-      "location": "Nashville",
-      "id": 5
-    },
-    {
-      "event": "PARTYYYYYYYYYYYYY",
-      "date": "2018-06-29",
-      "location": "Nashville",
-      "id": 6
-    },
-    {
-      "event": "PARTYYYYYYYYYYYYY",
-      "date": "2018-06-29",
-      "location": "Nashville",
-      "id": 7
     }
   ]
 }
