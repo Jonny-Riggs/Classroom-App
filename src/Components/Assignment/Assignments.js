@@ -12,6 +12,7 @@ export default class Assignments extends Component {
       desc: '',
       dueDate: '',
     };
+    this.handleFieldChange = this.handleFieldChange.bind(this);
   }
 
   deleteAssignment = function(id) {
@@ -24,7 +25,12 @@ export default class Assignments extends Component {
   postAssignment = function(response) {
     const newArray = this.state.assignmentList;
     newArray.push(response);
-    this.setState({ assignmentList: newArray });
+    this.setState({
+    assignmentList: newArray,
+    title: "",
+    desc: "",
+    dueDate: ""
+  });
   }.bind(this);
 
   componentDidMount() {
@@ -39,11 +45,12 @@ export default class Assignments extends Component {
       });
   }
 
-  handleFieldChange = function(evt) {
-    const stateToChange = {};
-    stateToChange[evt.target.id] = evt.target.value;
-    this.setState(stateToChange);
-  }.bind(this);
+    handleFieldChange = function(evt) {
+      evt.preventDefault()
+      const stateToChange = {};
+      stateToChange[evt.target.id] = evt.target.value;
+      this.setState(stateToChange);
+    }.bind(this)
 
   render() {
     return (

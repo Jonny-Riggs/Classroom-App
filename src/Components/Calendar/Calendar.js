@@ -23,7 +23,12 @@ export default class Calendar extends Component {
   postEvent = function(response) {
     const newArray = this.state.calendarList;
     newArray.push(response);
-    this.setState({ calendarList: newArray });
+    this.setState({
+      calendarList: newArray,
+      date: "",
+      location: "",
+      event: ""
+    });
   }.bind(this);
 
   componentDidMount() {
@@ -110,11 +115,3 @@ export default class Calendar extends Component {
     );
   }
 }
-
-//     {this.state.calendarList.map(e => {
-//         return (
-// <ul key={e.id}>
-//   <li>{e.event}</li>
-//   <li>{e.location}</li>
-//   <li>{e.date}</li>
-// </ul>

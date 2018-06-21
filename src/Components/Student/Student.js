@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import 'bulma/css/bulma.css';
+import PostNote from './PostNote'
 
 export default class Student extends Component {
   constructor() {
     super();
     this.state = {
       studentList: [],
+      notesList: []
+
     };
   }
 
@@ -14,10 +17,14 @@ export default class Student extends Component {
   }
 
   loadStudents = () => {
-    fetch('http://localhost:8088/students')
+    fetch('http://localhost:8088/students?_embed=notes')
       .then(r => r.json())
       .then(student => {
-        this.setState({ studentList: student });
+        this.setState({
+          studentList: student,
+          notesList: student.notes
+
+        });
       });
   };
 
@@ -49,8 +56,8 @@ export default class Student extends Component {
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child notification is-danger">
-                    <p className="title">Wide tile</p>
-                    <p className="subtitle">Aligned with the right tile</p>
+                    <p className="title">Things to Note!</p>
+                    <p className="subtitle"></p>
                     <div className="content" />
                   </article>
                 </div>
@@ -58,17 +65,17 @@ export default class Student extends Component {
               <div className="tile is-parent">
                 <article className="tile is-child notification is-primary">
                   <div className="content">
-                    <p className="title">NOTES</p>
+                    <p className="title">{s.firstName} {s.lastName} Notes</p>
                     <p className="subtitle">Parent/Teacher</p>
-                    <div className="content" />
+                    <div className="content"></div>
                     <div className="control box">
                       <textarea
                         className="textarea is-focused"
                         type="text"
-                        placeholder="Focused textarea"
+                        placeholder="Teacher Notes"
                       />
+                    <PostNote state={this.state} post={this.postNotes}/>
                     </div>
-                    <input className="button is-info" type="submit" value="Submit" />
                   </div>
                 </article>
               </div>

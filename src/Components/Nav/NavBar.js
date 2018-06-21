@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import 'bulma/css/bulma.css'
+import Login from "../Auth/Login"
 
 export default class NavBar extends Component {
     render() {

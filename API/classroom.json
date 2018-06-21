@@ -8,9 +8,11 @@
       "password": "hobbs1515"
     },
     {
+      "id": 2,
+      "firstName": "Jonathan",
+      "lastName": "Riggs",
       "email": "jriggs.clear@gmail.com",
-      "password": "kahawai_1",
-      "id": 2
+      "password": "kahawai_1"
     }
   ],
   "students": [
@@ -92,17 +94,10 @@
   ],
   "assignments": [
     {
-      "id": 3,
-      "title": "Practice Math Problems",
-      "desc": "Addition and Multiplication",
-      "dueDate": "07/31/90",
-      "studentId": 1
-    },
-    {
-      "title": "Reading List",
-      "desc": "Check out all the books at the library on your summer reading list!",
-      "dueDate": "2018-08-04",
-      "id": 5
+      "title": "Demo Day",
+      "desc": "The day of all days that will be even more stressfull",
+      "dueDate": "2018-07-02",
+      "id": 9
     }
   ],
   "events": [
@@ -113,22 +108,36 @@
       "date": "03/31/98"
     },
     {
-      "id": 2,
-      "event": "Field Day",
-      "location": "Dan Mills Elementary",
-      "date": "05/31/90"
-    },
-    {
-      "event": "Lorem ipsum[1] dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque. Subscript works as well!",
-      "date": "2018-06-23",
+      "event": "Crazy insane trip to the Zoo",
+      "date": "2018-06-15",
       "location": "Nashville",
       "id": 3
     },
     {
-      "event": "STRESSED OUT",
-      "date": "2018-06-02",
+      "event": "Cool Event",
+      "date": "2018-06-22",
+      "location": "Nashville",
+      "id": 4
+    },
+    {
+      "event": "Thank god today is over",
+      "date": "2018-06-30",
       "location": "Nashville",
       "id": 5
+    }
+  ],
+  "notes": [
+    {
+      "note": "w0eifowief",
+      "studentId": 1
+    },
+    {
+      "note": "This student had some behavior issues in the classroom",
+      "studentId": 2
+    },
+    {
+      "note": "This student had some behavior issues in the classroom",
+      "studentId": 3
     }
   ]
 }
