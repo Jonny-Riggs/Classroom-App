@@ -62,11 +62,7 @@ export default class Home extends Component {
                 <strong>Mrs. Riggs Classroom</strong> by{' '}
                 <a href="https://github.com/Jonny-Riggs/Classroom-App">
                   Jonathan Riggs
-                </a>. The source code is licensed
-                <a href="http://opensource.org/licenses/mit-license.php">
-                  MIT
-                </a>. The website content is licensed{' '}
-                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />.
+                </a>
               </p>
             </div>
           </div>

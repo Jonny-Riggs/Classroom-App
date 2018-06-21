@@ -15,7 +15,7 @@ export default class PostAssign extends Component {
       }),
     })
       .then(r => r.json())
-      .then(response => this.props.post(response));
+      .then(response => this.props.post(response))
   render() {
     return (
       <a className="button is-info" onClick={this.postAssign}>
