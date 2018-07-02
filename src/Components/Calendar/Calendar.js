@@ -14,8 +14,9 @@ export default class Calendar extends Component {
     };
   }
   deleteEvent = function(id) {
+    let current = null
     const array = this.state.calendarList;
-    const index = array.findIndex(item => item.id === id);
+    const index = array.findIndex(item => item.id === parseInt(id, 10));
     array.splice(index, 1);
     this.setState({ calendarList: array });
   }.bind(this);

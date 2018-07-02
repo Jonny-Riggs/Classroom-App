@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
 import 'bulma/css/bulma.css';
-import Calendar from './Calendar'
 
-export default class DeleteEvent extends Component {
-  DeleteEvent = event => {
+export default class DeleteStudent extends Component {
+  DeleteStudent = event => {
     const id = event.target.id.split('__')[1];
-    fetch(`http://localhost:8088/events/${id}`, {
+    fetch(`http://localhost:8088/students/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
       },
     }).then(r => r.json());
-    this.props.deleteEvent(id);
+    this.props.deleteStudent(id);
   };
   render() {
     return (
       <button
         id={'delete__' + this.props.id}
-        className="delete"
+        className="delete is-large"
         aria-label="delete"
-        onClick={this.DeleteEvent}
+        onClick={this.DeleteStudent}
       />
     );
   }

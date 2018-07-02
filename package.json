@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "auth0-js": "^9.6.1",
     "bloomer": "^0.6.3",
     "firebase": "^5.0.4",
     "react": "^16.4.0",
