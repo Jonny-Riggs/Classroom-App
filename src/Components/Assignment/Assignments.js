@@ -17,7 +17,7 @@ export default class Assignments extends Component {
 
   deleteAssignment = function(id) {
     const array = this.state.assignmentList;
-    const index = array.findIndex(item => item.id === id);
+    const index = array.findIndex(item => item.id === parseInt(id, 10));
     array.splice(index, 1);
     this.setState({ assignmentList: array });
   }.bind(this);

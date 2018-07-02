@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import 'bulma/css/bulma.css'
-import Login from "../Auth/Login"
+import Auth from '../Auth/Auth0'
 
 export default class NavBar extends Component {
+
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  }
+
+  login() {
+    this.props.Auth.login();
+  }
+
+  logout() {
+    this.props.Auth.logout();
+  }
     render() {
         return(
             <section className="hero is-info">
@@ -17,12 +29,18 @@ export default class NavBar extends Component {
       </h2>
     </div>
   </div>
+  <div className="tabs is-left">
+  <ul>
+    {/* <li className="is-active">Login</li> */}
+  </ul>
+  </div>
   <div className="tabs is-right">
   <ul>
     <li className="is-active"><Link to="/Home">Home</Link></li>
     <li><Link to="/Student">Students</Link></li>
     <li><Link to="/Calendar">Calendar</Link></li>
     <li><Link to="/Assignment">Assignments</Link></li>
+    <li><Link to="/">Logout</Link></li>
   </ul>
 </div>
 </section>

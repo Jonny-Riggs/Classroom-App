@@ -6,6 +6,7 @@ import Login from "./Components/Login"
 import Student from "./Components/Student"
 
 class App extends Component {
+
   render() {
     return (
       <div>
