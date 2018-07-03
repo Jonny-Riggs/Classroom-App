@@ -27,6 +27,11 @@ export default class Home extends Component {
               </p>
             </div>
           </div>
+            <div className="tile is-child">
+            <figure className="image is-1by1">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRljZ4yhHZ0d6KKx6rhNfKRbbAr22603xhN3WvTrpQTQU2WHQMzhA"/>
+            </figure>
+            </div>
           <div className="tile is-parent">
             <div className="tile is-child box">
               <p className="title">What to Expect!</p>
@@ -60,8 +65,8 @@ export default class Home extends Component {
             <div className="content has-text-centered">
               <p>
                 <strong>Mrs. Riggs Classroom</strong> by{' '}
-                <a href="https://github.com/Jonny-Riggs/Classroom-App">
                   Jonathan Riggs
+                <a href="https://github.com/Jonny-Riggs/Classroom-App">
                 </a>
               </p>
             </div>
