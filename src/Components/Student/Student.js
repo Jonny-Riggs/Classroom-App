@@ -60,25 +60,25 @@ export default class Student extends Component {
         <div className="tile is-parent is-vertical">
           <article className="tile is-child notification has-text-centered is-primary">
             <p className="title">ADD STUDENT</p>
-            <div class="field">
-              <div class="control">
+            <div className="field">
+              <div className="control">
                 <input
                   value={this.state.firstName}
                   onChange={this.handleFieldChange}
                   id="firstName"
-                  class="input is-info"
+                  className="input is-info"
                   type="text"
                   placeholder="First Name"
                 />
               </div>
             </div>
-            <div class="field">
-              <div class="control">
+            <div className="field">
+              <div className="control">
                 <input
                   value={this.state.lastName}
                   onChange={this.handleFieldChange}
                   id="lastName"
-                  class="input is-info"
+                  className="input is-info"
                   type="text"
                   placeholder="Last Name"
                 />
@@ -90,7 +90,7 @@ export default class Student extends Component {
                   value={this.state.image}
                   onChange={this.handleFieldChange}
                   id="image"
-                  class="input is-info"
+                  className="input is-info"
                   type="text"
                   placeholder="Image URL"
                 />

@@ -11,8 +11,8 @@ import Login from './Components/Auth/Login';
 ReactDOM.render(
   <Router>
     <div>
-      <NavBar/>
-      {/* <Login /> */}
+      {/* <NavBar /> */}
+      <Login />
       <Route path="/Home" component={Home} />
       <Route path="/Student" component={Student} />
       <Route path="/Calendar" component={Calendar} />

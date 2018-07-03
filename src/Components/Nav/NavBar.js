@@ -1,23 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import 'bulma/css/bulma.css'
-import Auth from '../Auth/Auth0'
+import Login from '../Auth/Login'
 
 export default class NavBar extends Component {
-
-  goTo(route) {
-    this.props.history.replace(`/${route}`)
-  }
-
-  login() {
-    this.props.Auth.login();
-  }
-
-  logout() {
-    this.props.Auth.logout();
-  }
-    render() {
-        return(
+  render() {
+    return(
+      <div>
             <section className="hero is-info">
   <div className="hero-body">
     <div className="container">
@@ -44,6 +33,7 @@ export default class NavBar extends Component {
   </ul>
 </div>
 </section>
+</div>
         )
     }
 }
