@@ -58,7 +58,7 @@ export default class Student extends Component {
     return (
       <div>
         <div className="tile is-parent is-vertical">
-          <article className="tile is-child notification has-text-centered is-primary">
+          <article className="tile is-child notification has-text-centered is-danger">
             <p className="title">ADD STUDENT</p>
             <div className="field">
               <div className="control">
